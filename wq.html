@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>邓霄&吴沁的家</title>
+		<style type="text/css">
+			html {
+			  display: grid;
+			  min-height: 100%;
+			}
+
+			body {
+			  display: grid;
+			  background: #183059;
+			}
+
+			.container {
+			  position: relative;
+			  margin: auto;
+			  overflow: hidden;
+			  width: 100%;
+			  height: 100%;
+			}
+
+			h1 {
+			  font-family: "Lato", sans-serif;
+			  text-align: center;
+			  margin-top: 2em;
+			  font-size: 2em;
+			  text-transform: uppercase;
+			  letter-spacing: 5px;
+			  color: #F6F4F3;
+			}
+
+			#timer,#timer2 {
+			  color: #F6F4F3;
+			  text-align: center;
+			  text-transform: uppercase;
+			  font-family: "Lato", sans-serif;
+			  font-size: .9em;
+			  letter-spacing: 5px;
+			}
+
+			.hours, .minutes, .seconds {
+			  display: inline-block;
+			  padding: 20px;
+			  width: 100px;
+			  border-radius: 5px;
+			}
+			.days {
+			  display: inline-block;
+			  padding: 20px;
+			  width: 200px;
+			  border-radius: 5px;
+			}
+
+
+			.days {
+			  background: #EF2F3C;
+			}
+
+			.hours {
+			  background: #F6F4F3;
+			  color: #183059;
+			}
+
+			.minutes {
+			  background: #276FBF;
+			}
+
+			.seconds {
+			  background: #F0A202;
+			}
+
+			.numbers {
+			  font-family: "Montserrat", sans-serif;
+			  color: #183059;
+			  font-size: 5em;
+			}
+		</style>		
+	</head>
+	<body>
+		<div class="container">
+			<h1>邓霄&吴沁的家</h1>
+			<h1>结婚纪念日</h1>
+			<div id="timer"></div>
+			<h1>小9诞生日</h1>
+			<div id="timer2"></div>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+			var weddingDate = new Date("October 2, 2019 12:00:00").getTime();
+
+			// countdown
+			var timer = setInterval(function() {
+			  var today = new Date().getTime();
+			  var diff = today - weddingDate;
+			  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+			  // display
+			  document.getElementById("timer").innerHTML =
+				"<div class=\"days\"> \
+				  <div class=\"numbers\">" + days + "</div>days</div> \
+				<div class=\"hours\"> \
+				  <div class=\"numbers\">" + hours + "</div>hours</div> \
+				<div class=\"minutes\"> \
+				  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+				<div class=\"seconds\"> \
+				  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+				</div>";
+			}, 1000);
+		</script>
+		<script type="text/javascript">
+			var birthdayDate = new Date("January 23, 2022 13:00:00").getTime();
+
+			// countdown
+			var timer = setInterval(function() {
+			  var today = new Date().getTime();
+			  var diff = today - birthdayDate;
+			  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+			  // display
+			document.getElementById("timer2").innerHTML =
+				"<div class=\"days\"> \
+				  <div class=\"numbers\">" + days + "</div>days</div> \
+				<div class=\"hours\"> \
+				  <div class=\"numbers\">" + hours + "</div>hours</div> \
+				<div class=\"minutes\"> \
+				  <div class=\"numbers\">" + minutes + "</div>minutes</div> \
+				<div class=\"seconds\"> \
+				  <div class=\"numbers\">" + seconds + "</div>seconds</div> \
+				</div>";
+			}, 1000);
+		</script>
+</html>
